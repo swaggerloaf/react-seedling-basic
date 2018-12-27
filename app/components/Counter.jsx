@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Card } from '@salesforce/design-system-react';
 
 class Counter extends Component {
   constructor(props) {
@@ -23,24 +24,22 @@ class Counter extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="card">
-          <div className="card-body">
-            <h5 className="card-title">Counter</h5>
+
+
+        <Card className="slds-card slds-card__body" >
+            <h5 className="slds-card__tile">Counter</h5>
             <p>
             Clicked: {this.props.value} times
             {' '}
-            <a href="#" className="btn btn-success" onClick={this.increment}>
+            <a href="#" className="slds-button_success" onClick={this.increment}>
               +
             </a>
             {' '}
-            <a href="#" className="btn btn-success"  onClick={this.decrement}>
+            <a href="#" className="slds-button_success"  onClick={this.decrement}>
               -
             </a>
             </p>
-          </div>
-        </div>
-      </div>
+        </Card>
     );
   }
 }
