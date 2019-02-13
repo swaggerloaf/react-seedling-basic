@@ -1,15 +1,16 @@
 import '@babel/polyfill';
 import * as React from 'react';
 import ReactDom from 'react-dom';
-//import { Provider } from 'react-redux';
+import { Provider } from 'react-redux';
 import * as styles from './styles';
 
-//import store from './configStore.js';
+import store from './redux/configStore.js';
 
-import Counter from './components/Counter.jsx';
-
+import TodoContainer from './components/TodoContainer.jsx';
 
 ReactDom.render(
-  <Counter />,
+  <Provider store={store}>
+    <TodoContainer />
+  </Provider>,
   document.getElementById('mountNode')
 );
