@@ -1,6 +1,6 @@
 import * as types from './actionTypes';
 
 // action creators
-export function createTodo(todo) {
-  return { type: types.CREATE_TODO, todo };
+export function loadTodosSuccess(todo) {
+  return { type: types.LOAD_TODOS_SUCCESS, todo };
 }
