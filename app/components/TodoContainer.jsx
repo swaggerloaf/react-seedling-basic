@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { decrement, increment } from '../redux/actions/actions';
 import Todo from './Todo.jsx';
 
 const mapStateToProps = state => {
