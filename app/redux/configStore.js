@@ -1,5 +1,5 @@
 import { createStore, compose, applyMiddleware } from 'redux';
-import reducer from './reducers/todoReducer';
+import reducer from './reducers/index';
 import thunk from 'redux-thunk';
 import * as actions from '../redux/actions/todoActions';
 //import createSagaMiddleware from 'redux-saga';
