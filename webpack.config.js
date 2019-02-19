@@ -41,7 +41,13 @@ module.exports = {
     ]
   },
   context: __dirname,
-  plugins: [],
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('development')
+      }
+    })
+  ],
   devtool: 'source-map',
   devServer: {
     historyApiFallback: true,
