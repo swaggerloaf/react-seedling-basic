@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Todo from './Todo.jsx';
+import TodoApp from './TodoApp.jsx';
 
 const mapStateToProps = state => {
   return {
@@ -12,6 +12,6 @@ const mapStateToProps = state => {
 const TodoContainer = connect(
   mapStateToProps
   // mapDispatchToProps
-)(Todo);
+)(TodoApp);
 
 export default TodoContainer;
