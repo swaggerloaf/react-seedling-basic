@@ -14,5 +14,3 @@ ReactDom.render(
   </Provider>,
   document.getElementById('mountNode')
 );
-
-console.log('whattaa');
