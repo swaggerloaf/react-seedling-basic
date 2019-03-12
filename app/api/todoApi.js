@@ -10,31 +10,73 @@ export function addTodo() {
   return post('todos');
 }
 
+export function putTodo(id) {
+  return put(`todos/${id}`);
+}
+
+export function patchTodo(id) {
+  return patch(`todos/${id}`);
+}
+
 export function deleteTodo(id) {
   return del(`todos/${id}`);
 }
 
-function get(url) {
-  console.log('getting ' + baseUrl + url);
-  return fetch(baseUrl + url); //.then(onSuccess, onError);
+async function get(url) {
+  try {
+    console.log('getting ' + baseUrl + url);
+  let response = await fetch(baseUrl + url);
+  let responseJson = await response.json();
+  return responseJson;
+  }
+  catch(error) {
+    console.error(error);
+  }
 }
 
-function post(url) {
+function post(url, todo) {
   const request = new Request(baseUrl + url, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json'
-    }
+    },
+    body: JSON.stringify(todo)
   });
-  return fetch(request); //.then(onSuccess, onError);
+  return fetch(request);
+}
+
+
+function put(url, todo) {
+  const request = new Request(baseUrl + url, {
+    method: 'PUT',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(todo)
+  });
+  return fetch(request);
+}
+
+
+function patch(url, todo) {
+  const request = new Request(baseUrl + url, {
+    method: 'PATCH',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(todo)
+  });
+  return fetch(request);
 }
 
 function del(url) {
   const request = new Request(baseUrl + url, {
     method: 'DELETE'
   });
-  return fetch(request); //.then(onSuccess, onError);
+  return fetch(request);
 }
 
 function onSuccess(response) {
