@@ -5,11 +5,11 @@ import * as styles from './styles';
 
 import store from './redux/configStore.js';
 
-import TodoContainer from './components/TodoContainer.jsx';
+import TodoAppContainer from './components/TodoAppContainer.jsx/index.js';
 
 ReactDom.render(
   <Provider store={store}>
-    <TodoContainer />
+    <TodoAppContainer />
   </Provider>,
   document.getElementById('mountNode')
 );

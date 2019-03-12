@@ -2,7 +2,7 @@ import getBaseUrl from './baseUrl';
 
 const baseUrl = getBaseUrl();
 
-export function getTodos() {
+export function getAllTodos() {
   return get('todos');
 }
 
@@ -25,11 +25,10 @@ export function deleteTodo(id) {
 async function get(url) {
   try {
     console.log('getting ' + baseUrl + url);
-  let response = await fetch(baseUrl + url);
-  let responseJson = await response.json();
-  return responseJson;
-  }
-  catch(error) {
+    let response = await fetch(baseUrl + url);
+    let responseJson = await response.json();
+    return responseJson;
+  } catch (error) {
     console.error(error);
   }
 }
@@ -46,7 +45,6 @@ function post(url, todo) {
   return fetch(request);
 }
 
-
 function put(url, todo) {
   const request = new Request(baseUrl + url, {
     method: 'PUT',
@@ -58,7 +56,6 @@ function put(url, todo) {
   });
   return fetch(request);
 }
-
 
 function patch(url, todo) {
   const request = new Request(baseUrl + url, {
