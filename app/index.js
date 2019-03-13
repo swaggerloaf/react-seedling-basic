@@ -5,7 +5,7 @@ import * as styles from './styles';
 
 import store from './redux/configStore.js';
 
-import TodoAppContainer from './components/TodoAppContainer.jsx/index.js';
+import TodoAppContainer from './components/TodoAppContainer.jsx';
 
 ReactDom.render(
   <Provider store={store}>
